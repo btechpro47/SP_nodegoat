@@ -1,8 +1,19 @@
-      - name: Checkmarx AST CLI Action
+name: Checkmarx One Scan
+on:
+  push:
+    branches:
+      - main
+      - master
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkmarx One CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
-          base_uri: https://sng.ast.checkmarx.net/
           cx_tenant: sng_partners
+          base_uri: https://sng.ast.checkmarx.net/
           cx_client_id: ${{IWW3KkI2Xx7iSxk5YP8CF41QYstGLMGM}}
           cx_client_secret: ${{CzmvDGZTshJjPnF0AGLkIUIWYjHfrNiu}}
-          source_dir: "path-to-scan" (dafault is ".")
+      
