@@ -1,0 +1,8 @@
+      - name: Checkmarx AST CLI Action
+        uses: checkmarx/ast-github-action@main #Github Action version
+        with:
+          base_uri: https://sng.ast.checkmarx.net/
+          cx_tenant: sng_partners
+          cx_client_id: ${{IWW3KkI2Xx7iSxk5YP8CF41QYstGLMGM}}
+          cx_client_secret: ${{CzmvDGZTshJjPnF0AGLkIUIWYjHfrNiu}}
+          source_dir: "path-to-scan" (dafault is ".")
