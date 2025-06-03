@@ -1,25 +1,8 @@
--name: Checkmarx AST Github Action
-  uses: checkmarx/ast-github-action@main #Github Action version
-  with:
-    # Provide the AST portal URL
-    base_uri: https://sng.ast.checkmarx.net/
-    # Provide the Tenant for AST portal URL
-    cx_tenant: sng_partners
-    # Client ID for AST portal authentication
-    cx_client_id: IWW3KkI2Xx7iSxk5YP8CF41QYstGLMGM
-    # Secret key for AST portal authentication
-    cx_client_secret: CzmvDGZTshJjPnF0AGLkIUIWYjHfrNiu
-    # Select a Checkmarx Project Name
-    project_name: # optional, default is ${{ github.repository }}
-    # Branch name
-    branch: # optional, default is ${{ github.head_ref || github.ref }}
-    # GitHub API Token
-    github_token: # optional, default is ${{ github.token }}
-    # Additional parameters for AST scan
-    additional_params: # optional, default is 
-    # Repository name for PR decoration
-    repo_name: # optional, default is ${{ github.event.repository.name }}
-    # Organization name to create the Pr comment
-    namespace: # optional, default is ${{ github.repository_owner }}
-    # Pr Number of the pull request that needs the decoration
-    pr_number: # optional, default is ${{ github.event.number }}
+     - name: Checkmarx AST CLI Action
+        uses: checkmarx/ast-github-action@main #Github Action version
+        with:
+          base_uri: https://sng.ast.checkmarx.net/
+          cx_tenant: sng_partners
+          cx_client_id: IWW3KkI2Xx7iSxk5YP8CF41QYstGLMGM
+          cx_client_secret: CzmvDGZTshJjPnF0AGLkIUIWYjHfrNiu
+          source_dir: "path-to-scan" (dafault is ".")
