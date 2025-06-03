@@ -1,4 +1,4 @@
-name: Checkmarx AST Github Action
+-name: Checkmarx AST Github Action
   uses: checkmarx/ast-github-action@main #Github Action version
   with:
     # Provide the AST portal URL
