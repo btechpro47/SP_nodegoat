@@ -3,8 +3,6 @@ name: Checkmarx One Scan
 on:
   push:
     branches:
-      - main
-      - master
       - feature/187
 jobs:
   build:
