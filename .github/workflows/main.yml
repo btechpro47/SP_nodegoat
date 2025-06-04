@@ -15,4 +15,14 @@ jobs:
           cx_tenant: sng_partners
           cx_client_id: ${cx_client_ID}
           cx_client_secret: ${CX_Client_Secret}
+           # Select a Checkmarx Project Name
+          project_name: btechpro47/SP_nodegoat
+          # GitHub API Token
+          github_token:  ${{ github.token }}
+          # Repository name for PR decoration
+          repo_name: ${{ github.event.repository.name }}
+          # Organization name to create the Pr comment
+          namespace:  ${{ github.repository_owner }}
+          # Pr Number of the pull request that needs the decoration
+          pr_number: ${{ github.event.number }}
      
