@@ -13,8 +13,8 @@ jobs:
         with:
           base_uri: https://sng.ast.checkmarx.net/
           cx_tenant: sng_partners
-          cx_client_id: ${{cx_client_ID}}
-          cx_client_secret: ${{CX_Client_Secret}}
+          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
+          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
            # Select a Checkmarx Project Name
           project_name: ${{ github.repository }}
            # Branch name
