@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkmarx One CLI Action
+      - name: Checkmarx One github Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
           base_uri: https://sng.ast.checkmarx.net/
