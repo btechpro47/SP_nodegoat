@@ -1,27 +1,56 @@
-
 name: Checkmarx One Scan
+ 
 on:
+
   push:
+
     branches:
+
+      - main
+
+      - master
+
       - feature/187
+ 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
+
       - name: Checkout
+
         uses: actions/checkout@v2
-      - name: Checkmarx One github Action
-        uses: checkmarx/ast-github-action@main #Github Action version
+ 
+      - name: Run Checkmarx One Scan
+
+        uses: Checkmarx/ast-github-action@2.0.23
+
         with:
+
+          # Provide the AST portal URL
+
           base_uri: https://sng.ast.checkmarx.net/
+
+          # Provide the Tenant for AST portal URL
+
           cx_tenant: sng_partners
-          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
-          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-           # Select a Checkmarx Project Name
-          project_name: ${{ github.repository }}
-           # Branch name
-          repo_name: ${{ github.event.repository.name }}
-          # Organization name to create the Pr comment
-          namespace:  ${{ github.repository_owner }}
-          # Pr Number of the pull request that needs the decoration
-          pr_number:  ${{ github.event.number }}
+
+          # Client ID for AST portal authentication
+
+          cx_client_id: ${{secrets.CX_CLIENT_ID}}
+
+          # Secret key for AST portal authentication
+
+          cx_client_secret: ${{secrets.CX_CLIENT_SECRET}}
+
+          # Branch name (if required)
+
+          #branch: # optional, default is ${{ github.head_ref || github.ref }}
+
+          # Additional parameters for AST scan
+
+          #additional_params: # optional
+ 
