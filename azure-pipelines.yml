@@ -13,7 +13,10 @@ steps:
 - task: Checkmarx AST@3
   displayName: 'Run a one-line script'
   inputs:
-    CheckmarxService: 'Azure DevOps'
+    CheckmarxService: 'Azure Git Devops'
+- task: Checkmarx AST@3
+  inputs:
+    CheckmarxService: 'Azure Git Devops'
     projectName: '$(Build.Repository.Name)'
     branchName: '$(Build.SourceBranchName)'
     tenantName: 'sng_partners'
